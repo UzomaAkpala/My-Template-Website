@@ -1,11 +1,33 @@
 import { Link } from "react-router-dom";
-{
-  /* Remeber that the Link tag is only for pages within the project, when you want to link to an external page like google you still have to use the original <a> tags */
-}
+import Wrapper from "../assets/wrappers/RegisterAndLoginPage";
+import { FormRow, Logo } from "../components";
 
 const Login = () => {
-  <div>
-    return <h1>Login Page</h1>;<Link to="/register">Register Page</Link>;
-  </div>;
+  return (
+    <Wrapper>
+      <form className="form">
+        <Logo />
+        <h4>login</h4>
+        <FormRow
+          type="email"
+          name="email"
+          defaultValue="francisakpalal@yahoo.com"
+        />
+        <FormRow type="password" name="password" defaultValue="secret132" />
+        <button type="submit" className="btn btn-block">
+          Submit
+        </button>
+        <button type="button" className="btn btn-block">
+          explore the app
+        </button>
+        <p>
+          Not a member yet?
+          <Link to="/register" className="member-btn">
+            Register
+          </Link>
+        </p>
+      </form>
+    </Wrapper>
+  );
 };
 export default Login;
